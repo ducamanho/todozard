@@ -5,7 +5,7 @@ let type = "";
 
 const getAllTasks = async (req, res) => {
   try {
-    const tasksList = await Task.find();
+    const tasksList = await Task.find().sort({createdAt: -1});
     return res.render("index", {
       tasksList,
       task: null,
